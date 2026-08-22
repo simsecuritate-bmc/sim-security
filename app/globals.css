@@ -287,6 +287,7 @@ section { padding: 6rem 2rem; }
   transition: all 0.3s;
   position: relative;
   overflow: visible;
+  cursor: pointer;
 }
 .service-card::before {
   content: '';
@@ -303,36 +304,75 @@ section { padding: 6rem 2rem; }
 .service-icon { font-size: 2.5rem; margin-bottom: 1.25rem; display: block; }
 .service-card h3 { font-size: 1.3rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--white); }
 .service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
+.service-more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-bright);
+}
 
-/* POPUP DETALIU SERVICIU (apare la hover peste card) */
-.service-popup {
-  position: absolute;
-  top: 0; left: 0; right: 0;
+/* MODAL DETALIU SERVICIU (se deschide la click/tap, identic pe mobil și desktop) */
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 300;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.service-modal {
+  position: relative;
   background: linear-gradient(135deg, rgba(30, 66, 120, 0.99), rgba(8, 18, 34, 0.99));
   border: 1px solid rgba(59, 130, 246, 0.5);
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 640px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-6px) scale(0.98);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-  z-index: 20;
-  pointer-events: none;
 }
-.service-popup.is-open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+.service-modal .service-icon { margin-bottom: 1rem; }
+.service-modal h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 1rem; }
+.service-modal p { color: var(--white); opacity: 0.9; font-size: 0.95rem; line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
+.service-modal-close {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: rgba(10, 22, 40, 0.6);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
 }
-.service-popup .service-icon { margin-bottom: 1rem; }
-.service-popup h3 { color: var(--accent-bright); }
-.service-popup p { color: var(--white); opacity: 0.9; }
+.service-modal-close:hover { background: rgba(37, 99, 235, 0.4); }
+.service-modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.service-modal-images img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
 
-@media (max-width: 768px) {
-  .service-popup { display: none; }
-}
 /* ABOUT */
 #despre { background: var(--navy); position: relative; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
