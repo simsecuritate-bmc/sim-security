@@ -1,2 +1,18 @@
-node_modules/ 
-.next/ 
+node_modules/
+.next/
+out/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Vercel
+.vercel
+
+# env
+.env
+.env.local
+.env*.local
+
+# logs
+npm-debug.log*
