@@ -23,62 +23,72 @@ const handleSubmit = async (e) => {
   }
 }
 
-       const services = [
+  const services = [
     {
       icon: '📷',
       title: 'Sisteme CCTV / Supraveghere Video',
       desc: 'Instalare camere de supraveghere interior și exterior, sisteme analogice și IP, stocare NVR/DVR. Acoperire 24/7 cu rezoluție HD și 4K.',
-      details: 'Proiectăm sistemul de supraveghere în funcție de dimensiunea și cerințele obiectivului: camere dome, bullet sau PTZ, analogice (HD-TVI/CVI) sau IP, cu vedere nocturnă și detecție inteligentă de mișcare. Stocare pe NVR/DVR cu acces la distanță din aplicație mobilă, configurare pentru vizualizare live și export înregistrări. Instalare, configurare rețea și testare completă incluse.'
+      details: 'Proiectăm sistemul de supraveghere în funcție de dimensiunea și cerințele obiectivului: camere dome, bullet sau PTZ, analogice (HD-TVI/CVI) sau IP, cu vedere nocturnă și detecție inteligentă de mișcare. Stocare pe NVR/DVR cu acces la distanță din aplicație mobilă, configurare pentru vizualizare live și export înregistrări.\n\nEtapele lucrării: consultanță și evaluare a punctelor de acoperire necesare, proiectare unghiuri de filmare, montaj camere și cablare (sau configurare wireless), configurare NVR/DVR și rețea, testare completă și instruirea clientului privind aplicația de vizualizare de pe telefon. Oferim garanție la echipamente și opțiune de contract de mentenanță.',
+      images: []
     },
     {
       icon: '🚨',
       title: 'Sisteme de Alarmare la Efracție',
       desc: 'Detectoare de mișcare, senzori de geam și ușă, sirene interior/exterior. Sisteme conectate la dispecerat sau aplicație mobilă.',
-      details: 'Sisteme complete de alarmă cu senzori de mișcare (PIR/dual tehnologie), contacte magnetice pentru uși și ferestre, senzori de vibrație și sirene interior/exterior cu flash. Centrală conectată la aplicație mobilă pentru armare/dezarmare de la distanță și notificări în timp real, cu opțiune de conectare la dispecerat de monitorizare 24/7.'
+      details: 'Sisteme complete de alarmă cu senzori de mișcare (PIR/dual tehnologie), contacte magnetice pentru uși și ferestre, senzori de vibrație și sirene interior/exterior cu flash. Centrală conectată la aplicație mobilă pentru armare/dezarmare de la distanță și notificări în timp real, cu opțiune de conectare la dispecerat de monitorizare 24/7.\n\nSistemul poate fi extins cu telecomenzi, tastaturi de armare pe zone separate (utile în case cu mai multe niveluri) și baterie de backup în caz de pană de curent. La finalul instalării, primești o sesiune de instruire pentru armare/dezarmare și configurarea notificărilor.',
+      images: []
     },
     {
       icon: '📡',
       title: 'Sisteme de Detecție Perimetrală',
       desc: 'Senzori perimetrali, bariere infraroșu și detectoare de mișcare pentru protecția curții, gardului sau limitei proprietății. Alertare imediată la orice intruziune.',
-      details: 'Protejăm limita proprietății cu bariere infraroșu, senzori pe gard, detectoare radar de mișcare exterioară și cabluri senzoriale îngropate, calibrate să evite alarmele false (animale, vânt). Ideal pentru curți, depozite, parcări și obiective industriale unde intervenția trebuie declanșată înainte de intruziunea efectivă în clădire.'
+      details: 'Protejăm limita proprietății cu bariere infraroșu, senzori pe gard, detectoare radar de mișcare exterioară și cabluri senzoriale îngropate, calibrate să evite alarmele false (animale, vânt). Ideal pentru curți, depozite, parcări și obiective industriale unde intervenția trebuie declanșată înainte de intruziunea efectivă în clădire.\n\nSoluția se proiectează individual, în funcție de configurația terenului și de riscurile identificate la evaluarea inițială, și se poate integra cu sistemul de CCTV (pornire automată a înregistrării la alarmă) și cu cel de alarmare la efracție.',
+      images: []
     },
     {
       icon: '🔐',
       title: 'Sisteme de Control al Accesului',
       desc: 'Sisteme cu card RFID, cod PIN sau amprentă digitală. Ideal pentru firme, depozite și instituții. Jurnalizare completă a accesului.',
-      details: 'Sisteme de control acces cu cititoare de card RFID, cod PIN, amprentă digitală sau recunoaștere facială, integrate cu electromagneți, yale electrice sau bariere. Software de administrare cu jurnal complet al accesărilor și programare de drepturi pe zone și intervale orare, potrivit pentru firme, blocuri, depozite și instituții.'
+      details: 'Sisteme de control acces cu cititoare de card RFID, cod PIN, amprentă digitală sau recunoaștere facială, integrate cu electromagneți, yale electrice sau bariere. Software de administrare cu jurnal complet al accesărilor și programare de drepturi pe zone și intervale orare, potrivit pentru firme, blocuri, depozite și instituții.\n\nPoți gestiona ușor adăugarea sau ștergerea unui utilizator, restricționa accesul pe anumite intervale orare și genera rapoarte de prezență/accesare pentru fiecare punct de control.',
+      images: []
     },
     {
       icon: '🔥',
       title: 'Instalații de Detecție și Semnalizare la Incendiu',
       desc: 'Detectoare de fum și temperatură, centrale de semnalizare și sirene de alarmare. Sisteme conforme normativelor în vigoare, cu intervenție rapidă.',
-      details: 'Instalații de detecție și semnalizare la incendiu cu detectoare de fum, temperatură și gaz, centrale adresabile sau convenționale, butoane de alarmare manuală și sirene optico-acustice. Proiectare, punere în funcțiune și verificare periodică, conform normativelor în vigoare.'
+      details: 'Instalații de detecție și semnalizare la incendiu cu detectoare de fum, temperatură și gaz, centrale adresabile sau convenționale, butoane de alarmare manuală și sirene optico-acustice. Proiectare, punere în funcțiune și verificare periodică, conform normativelor în vigoare.\n\nRecomandat pentru firme, depozite, blocuri și instituții care au nevoie de sisteme conforme pentru autorizare — de la consultanță inițială până la documentația necesară și mentenanța periodică obligatorie.',
+      images: []
     },
     {
       icon: '🔔',
       title: 'Sisteme de Interfonie și Videointerfonie',
       desc: 'Instalare interfoane audio și video pentru blocuri, vile și clădiri de birouri. Integrare cu sistemul de control acces.',
-      details: 'Instalăm interfoane audio și video pentru blocuri, vile și clădiri de birouri, cu monitoare interioare color, deschidere ușă de la distanță și, opțional, vizualizare de pe telefon. Integrare completă cu sistemul de control acces și, la cerere, cu camerele de supraveghere ale intrării.'
+      details: 'Instalăm interfoane audio și video pentru blocuri, vile și clădiri de birouri, cu monitoare interioare color, deschidere ușă de la distanță și, opțional, vizualizare de pe telefon. Integrare completă cu sistemul de control acces și, la cerere, cu camerele de supraveghere ale intrării.\n\nDisponibile atât în variantă cu fir, cât și wireless, cu unul sau mai multe posturi interioare — utile pentru vile cu mai multe apartamente sau clădiri de birouri cu recepție.',
+      images: []
     },
     {
       icon: '⚙️',
       title: 'Sisteme de Automatizare',
       desc: 'Automatizare porți, bariere și uși de acces — telecomenzi, cititoare de proximitate și integrare cu restul sistemelor de securitate.',
-      details: 'Automatizăm porți batante, glisante și bariere auto, cu telecomenzi, cititoare de proximitate, buton de interior și senzori de siguranță anti-blocare. Integrare cu sistemul de control acces și interfonie, pentru comandă unificată a intrării în proprietate.'
+      details: 'Automatizăm porți batante, glisante și bariere auto, cu telecomenzi, cititoare de proximitate, buton de interior și senzori de siguranță anti-blocare. Integrare cu sistemul de control acces și interfonie, pentru comandă unificată a intrării în proprietate.\n\nOferim și comandă de pe telefon (deschidere de la distanță), programare de coduri temporare pentru vizitatori și mentenanță periodică a motoarelor și automatizărilor existente, chiar dacă nu au fost instalate de noi.',
+      images: []
     },
     {
       icon: '🌐',
       title: 'Rețelistică',
       desc: 'Proiectare și instalare rețele de date pentru sisteme IP: cablare structurată, switch-uri, echipamente wireless și configurare pentru integrarea sistemelor de securitate.',
-      details: 'Proiectăm și instalăm infrastructura de rețea necesară sistemelor IP: cablare structurată UTP/fibră, switch-uri PoE, echipamente wireless și configurare pentru separarea traficului de securitate de restul rețelei. Testare a cablajului la finalizare.'
+      details: 'Proiectăm și instalăm infrastructura de rețea necesară sistemelor IP: cablare structurată UTP/fibră, switch-uri PoE, echipamente wireless și configurare pentru separarea traficului de securitate de restul rețelei. Testare a cablajului la finalizare.\n\nAcoperă atât instalații noi (birouri, depozite, obiective industriale), cât și extinderea sau optimizarea unei rețele existente, astfel încât camerele și sistemele IP să funcționeze stabil, fără blocaje de bandă.',
+      images: []
     },
     {
       icon: '🔧',
       title: 'Mentenanță & Service',
       desc: 'Întreținere periodică, reparații și upgrade sisteme existente. Contracte de mentenanță cu intervenție rapidă garantată.',
-      details: 'Contracte de mentenanță preventivă cu verificări periodice programate, curățare și calibrare echipamente, actualizări firmware și înlocuire componente uzate. Intervenție rapidă la solicitare pentru remedierea oricărei defecțiuni, cu timp de răspuns garantat prin contract.'
+      details: 'Contracte de mentenanță preventivă cu verificări periodice programate, curățare și calibrare echipamente, actualizări firmware și înlocuire componente uzate. Intervenție rapidă la solicitare pentru remedierea oricărei defecțiuni, cu timp de răspuns garantat prin contract.\n\nPreluăm în mentenanță și sisteme instalate de alți furnizori, după o evaluare inițială a stării echipamentelor existente.',
+      images: []
     },
   ]
+
   return (
     <>
       {/* NAVBAR */}
@@ -158,28 +168,49 @@ const handleSubmit = async (e) => {
               Proiectare, instalare și mentenanță cu garanție.
             </p>
           </div>
-                    <div className="services-grid">
+          <div className="services-grid">
             {services.map((s, i) => (
               <div
                 className="service-card"
                 key={i}
-                onMouseEnter={() => setActiveService(i)}
-                onMouseLeave={() => setActiveService(null)}
+                onClick={() => setActiveService(i)}
               >
                 <span className="service-icon">{s.icon}</span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-
-                <div className={`service-popup ${activeService === i ? 'is-open' : ''}`}>
-                  <span className="service-icon">{s.icon}</span>
-                  <h3>{s.title}</h3>
-                  <p>{s.details}</p>
-                </div>
-                           </div>
+                <span className="service-more">Vezi detalii →</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* SERVICE DETAIL MODAL */}
+      {activeService !== null && (
+        <div className="service-modal-overlay" onClick={() => setActiveService(null)}>
+          <div className="service-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="service-modal-close"
+              onClick={() => setActiveService(null)}
+              aria-label="Închide"
+            >
+              ✕
+            </button>
+            <span className="service-icon">{services[activeService].icon}</span>
+            <h3>{services[activeService].title}</h3>
+            {services[activeService].details.split('\n\n').map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+            {services[activeService].images && services[activeService].images.length > 0 && (
+              <div className="service-modal-images">
+                {services[activeService].images.map((src, idx) => (
+                  <img key={idx} src={src} alt={`${services[activeService].title} - imagine ${idx + 1}`} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* ABOUT */}
       <section id="despre">
