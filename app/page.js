@@ -22,31 +22,46 @@ const handleSubmit = async (e) => {
   }
 }
 
-  const services = [
+      const services = [
     {
       icon: '📷',
-      title: 'Sisteme CCTV',
+      title: 'Sisteme CCTV / Supraveghere Video',
       desc: 'Instalare camere de supraveghere interior și exterior, sisteme analogice și IP, stocare NVR/DVR. Acoperire 24/7 cu rezoluție HD și 4K.'
     },
     {
       icon: '🚨',
-      title: 'Sisteme de Alarmă',
+      title: 'Sisteme de Alarmare la Efracție',
       desc: 'Detectoare de mișcare, senzori de geam și ușă, sirene interior/exterior. Sisteme conectate la dispecerat sau aplicație mobilă.'
     },
     {
+      icon: '📡',
+      title: 'Sisteme de Detecție Perimetrală',
+      desc: 'Senzori perimetrali, bariere infraroșu și detectoare de mișcare pentru protecția curții, gardului sau limitei proprietății. Alertare imediată la orice intruziune.'
+    },
+    {
       icon: '🔐',
-      title: 'Control Acces',
+      title: 'Sisteme de Control al Accesului',
       desc: 'Sisteme cu card RFID, cod PIN sau amprentă digitală. Ideal pentru firme, depozite și instituții. Jurnalizare completă a accesului.'
     },
     {
+      icon: '🔥',
+      title: 'Instalații de Detecție și Semnalizare la Incendiu',
+      desc: 'Detectoare de fum și temperatură, centrale de semnalizare și sirene de alarmare. Sisteme conforme normativelor în vigoare, cu intervenție rapidă.'
+    },
+    {
       icon: '🔔',
-      title: 'Interfonie & Video',
+      title: 'Sisteme de Interfonie și Videointerfonie',
       desc: 'Instalare interfoane audio și video pentru blocuri, vile și clădiri de birouri. Integrare cu sistemul de control acces.'
     },
     {
-      icon: '🛡️',
-      title: 'Sisteme Antiefracție',
-      desc: 'Protecție completă împotriva efracției: senzori perimetrali, detectoare de spargere geam, bariere IR și sisteme de alertare imediată.'
+      icon: '⚙️',
+      title: 'Sisteme de Automatizare',
+      desc: 'Automatizare porți, bariere și uși de acces — telecomenzi, cititoare de proximitate și integrare cu restul sistemelor de securitate.'
+    },
+    {
+      icon: '🌐',
+      title: 'Rețelistică',
+      desc: 'Proiectare și instalare rețele de date pentru sisteme IP: cablare structurată, switch-uri, echipamente wireless și configurare pentru integrarea sistemelor de securitate.'
     },
     {
       icon: '🔧',
