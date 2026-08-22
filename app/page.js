@@ -4,7 +4,6 @@ import { useState } from 'react'
 export default function Home() {
   const [formData, setFormData] = useState({ nume: '', telefon: '', email: '', serviciu: '', mesaj: '' })
   const [sent, setSent] = useState(false)
-  const [sent, setSent] = useState(false)
   const [activeService, setActiveService] = useState(null)
 
 const handleSubmit = async (e) => {
