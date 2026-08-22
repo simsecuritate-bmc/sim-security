@@ -410,3 +410,7 @@ footer {
   .hero-visual { display: none; }
   .nav-links { display: none; }
 }
+
+@media (min-width: 860px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
