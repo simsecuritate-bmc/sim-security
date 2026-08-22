@@ -176,9 +176,7 @@ const handleSubmit = async (e) => {
                   <h3>{s.title}</h3>
                   <p>{s.details}</p>
                 </div>
-              </div>
-            ))}
-          </div>
+                           </div>
             ))}
           </div>
         </div>
