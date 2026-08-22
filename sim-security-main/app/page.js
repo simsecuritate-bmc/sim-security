@@ -385,7 +385,7 @@ const handleSubmit = async (e) => {
             <span>🏅</span>
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
-          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.2 </div>
+          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.3 </div>
         </div>
       </footer>
     </>
