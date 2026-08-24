@@ -301,7 +301,18 @@ section { padding: 6rem 2rem; }
 }
 .service-card:hover { border-color: rgba(59, 130, 246, 0.4); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(10, 22, 40, 0.6); }
 .service-card:hover::before { transform: scaleX(1); }
-.service-icon { font-size: 2.5rem; margin-bottom: 1.25rem; display: block; }
+.service-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(96, 165, 250, 0.08));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--accent-bright);
+  margin-bottom: 1.25rem;
+}
 .service-card h3 { font-size: 1.3rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--white); }
 .service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
 .service-more {
@@ -339,6 +350,18 @@ section { padding: 6rem 2rem; }
   max-height: 85vh;
   overflow-y: auto;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+.service-modal-hero {
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  line-height: 0;
+}
+.service-modal-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .service-modal .service-icon { margin-bottom: 1rem; }
 .service-modal h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 1rem; }
@@ -484,3 +507,4 @@ footer {
 @media (min-width: 860px) {
   .services-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
