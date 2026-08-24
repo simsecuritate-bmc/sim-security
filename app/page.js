@@ -1,6 +1,84 @@
 'use client'
 import { useState } from 'react'
 
+function ServiceIcon({ type }) {
+  const props = {
+    width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none',
+    stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round'
+  }
+  switch (type) {
+    case 'cctv':
+      return (
+        <svg {...props}>
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+          <circle cx="12" cy="13" r="4" />
+        </svg>
+      )
+    case 'alarm':
+      return (
+        <svg {...props}>
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+      )
+    case 'perimeter':
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="2" x2="12" y2="5" />
+          <line x1="12" y1="19" x2="12" y2="22" />
+          <line x1="2" y1="12" x2="5" y2="12" />
+          <line x1="19" y1="12" x2="22" y2="12" />
+        </svg>
+      )
+    case 'access':
+      return (
+        <svg {...props}>
+          <rect x="3" y="11" width="18" height="10" rx="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+      )
+    case 'fire':
+      return (
+        <svg {...props}>
+          <path d="M17.66 18.66A8 8 0 0 1 6.34 7.34S7 9 9 10c0-2 .5-5 3-7 2 2 4.16 5.19 4.16 8.16A7.97 7.97 0 0 1 17.66 18.66z" />
+          <path d="M9.88 16.12A3 3 0 1 0 12.01 11L11 14H9c0 .77.29 1.54.88 2.12z" />
+        </svg>
+      )
+    case 'intercom':
+      return (
+        <svg {...props}>
+          <path d="M23 7l-7 5 7 5V7z" />
+          <rect x="1" y="5" width="15" height="14" rx="2" />
+        </svg>
+      )
+    case 'automation':
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+      )
+    case 'network':
+      return (
+        <svg {...props}>
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      )
+    case 'maintenance':
+      return (
+        <svg {...props}>
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
 export default function Home() {
   const [formData, setFormData] = useState({ nume: '', telefon: '', email: '', serviciu: '', mesaj: '' })
   const [sent, setSent] = useState(false)
@@ -25,63 +103,63 @@ const handleSubmit = async (e) => {
 
   const services = [
     {
-      icon: '📷',
+      icon: 'cctv',
       title: 'Sisteme CCTV / Supraveghere Video',
       desc: 'Instalare camere de supraveghere interior și exterior, sisteme analogice și IP, stocare NVR/DVR. Acoperire 24/7 cu rezoluție HD și 4K.',
       details: 'Proiectăm sistemul de supraveghere în funcție de dimensiunea și cerințele obiectivului: camere dome, bullet sau PTZ, analogice (HD-TVI/CVI) sau IP, cu vedere nocturnă și detecție inteligentă de mișcare. Stocare pe NVR/DVR cu acces la distanță din aplicație mobilă, configurare pentru vizualizare live și export înregistrări.\n\nEtapele lucrării: consultanță și evaluare a punctelor de acoperire necesare, proiectare unghiuri de filmare, montaj camere și cablare (sau configurare wireless), configurare NVR/DVR și rețea, testare completă și instruirea clientului privind aplicația de vizualizare de pe telefon. Oferim garanție la echipamente și opțiune de contract de mentenanță.',
       images: []
     },
     {
-      icon: '🚨',
+      icon: 'alarm',
       title: 'Sisteme de Alarmare la Efracție',
       desc: 'Detectoare de mișcare, senzori de geam și ușă, sirene interior/exterior. Sisteme conectate la dispecerat sau aplicație mobilă.',
       details: 'Sisteme complete de alarmă cu senzori de mișcare (PIR/dual tehnologie), contacte magnetice pentru uși și ferestre, senzori de vibrație și sirene interior/exterior cu flash. Centrală conectată la aplicație mobilă pentru armare/dezarmare de la distanță și notificări în timp real, cu opțiune de conectare la dispecerat de monitorizare 24/7.\n\nSistemul poate fi extins cu telecomenzi, tastaturi de armare pe zone separate (utile în case cu mai multe niveluri) și baterie de backup în caz de pană de curent. La finalul instalării, primești o sesiune de instruire pentru armare/dezarmare și configurarea notificărilor.',
       images: []
     },
     {
-      icon: '📡',
+      icon: 'perimeter',
       title: 'Sisteme de Detecție Perimetrală',
       desc: 'Senzori perimetrali, bariere infraroșu și detectoare de mișcare pentru protecția curții, gardului sau limitei proprietății. Alertare imediată la orice intruziune.',
       details: 'Protejăm limita proprietății cu bariere infraroșu, senzori pe gard, detectoare radar de mișcare exterioară și cabluri senzoriale îngropate, calibrate să evite alarmele false (animale, vânt). Ideal pentru curți, depozite, parcări și obiective industriale unde intervenția trebuie declanșată înainte de intruziunea efectivă în clădire.\n\nSoluția se proiectează individual, în funcție de configurația terenului și de riscurile identificate la evaluarea inițială, și se poate integra cu sistemul de CCTV (pornire automată a înregistrării la alarmă) și cu cel de alarmare la efracție.',
       images: []
     },
     {
-      icon: '🔐',
+      icon: 'access',
       title: 'Sisteme de Control al Accesului',
       desc: 'Sisteme cu card RFID, cod PIN sau amprentă digitală. Ideal pentru firme, depozite și instituții. Jurnalizare completă a accesului.',
       details: 'Sisteme de control acces cu cititoare de card RFID, cod PIN, amprentă digitală sau recunoaștere facială, integrate cu electromagneți, yale electrice sau bariere. Software de administrare cu jurnal complet al accesărilor și programare de drepturi pe zone și intervale orare, potrivit pentru firme, blocuri, depozite și instituții.\n\nPoți gestiona ușor adăugarea sau ștergerea unui utilizator, restricționa accesul pe anumite intervale orare și genera rapoarte de prezență/accesare pentru fiecare punct de control.',
       images: []
     },
     {
-      icon: '🔥',
+      icon: 'fire',
       title: 'Instalații de Detecție și Semnalizare la Incendiu',
       desc: 'Detectoare de fum și temperatură, centrale de semnalizare și sirene de alarmare. Sisteme conforme normativelor în vigoare, cu intervenție rapidă.',
       details: 'Instalații de detecție și semnalizare la incendiu cu detectoare de fum, temperatură și gaz, centrale adresabile sau convenționale, butoane de alarmare manuală și sirene optico-acustice. Proiectare, punere în funcțiune și verificare periodică, conform normativelor în vigoare.\n\nRecomandat pentru firme, depozite, blocuri și instituții care au nevoie de sisteme conforme pentru autorizare — de la consultanță inițială până la documentația necesară și mentenanța periodică obligatorie.',
       images: []
     },
     {
-      icon: '🔔',
+      icon: 'intercom',
       title: 'Sisteme de Interfonie și Videointerfonie',
       desc: 'Instalare interfoane audio și video pentru blocuri, vile și clădiri de birouri. Integrare cu sistemul de control acces.',
       details: 'Instalăm interfoane audio și video pentru blocuri, vile și clădiri de birouri, cu monitoare interioare color, deschidere ușă de la distanță și, opțional, vizualizare de pe telefon. Integrare completă cu sistemul de control acces și, la cerere, cu camerele de supraveghere ale intrării.\n\nDisponibile atât în variantă cu fir, cât și wireless, cu unul sau mai multe posturi interioare — utile pentru vile cu mai multe apartamente sau clădiri de birouri cu recepție.',
       images: []
     },
     {
-      icon: '⚙️',
+      icon: 'automation',
       title: 'Sisteme de Automatizare',
       desc: 'Automatizare porți, bariere și uși de acces — telecomenzi, cititoare de proximitate și integrare cu restul sistemelor de securitate.',
       details: 'Automatizăm porți batante, glisante și bariere auto, cu telecomenzi, cititoare de proximitate, buton de interior și senzori de siguranță anti-blocare. Integrare cu sistemul de control acces și interfonie, pentru comandă unificată a intrării în proprietate.\n\nOferim și comandă de pe telefon (deschidere de la distanță), programare de coduri temporare pentru vizitatori și mentenanță periodică a motoarelor și automatizărilor existente, chiar dacă nu au fost instalate de noi.',
       images: []
     },
     {
-      icon: '🌐',
+      icon: 'network',
       title: 'Rețelistică',
       desc: 'Proiectare și instalare rețele de date pentru sisteme IP: cablare structurată, switch-uri, echipamente wireless și configurare pentru integrarea sistemelor de securitate.',
       details: 'Proiectăm și instalăm infrastructura de rețea necesară sistemelor IP: cablare structurată UTP/fibră, switch-uri PoE, echipamente wireless și configurare pentru separarea traficului de securitate de restul rețelei. Testare a cablajului la finalizare.\n\nAcoperă atât instalații noi (birouri, depozite, obiective industriale), cât și extinderea sau optimizarea unei rețele existente, astfel încât camerele și sistemele IP să funcționeze stabil, fără blocaje de bandă.',
       images: []
     },
     {
-      icon: '🔧',
+      icon: 'maintenance',
       title: 'Mentenanță & Service',
       desc: 'Întreținere periodică, reparații și upgrade sisteme existente. Contracte de mentenanță cu intervenție rapidă garantată.',
       details: 'Contracte de mentenanță preventivă cu verificări periodice programate, curățare și calibrare echipamente, actualizări firmware și înlocuire componente uzate. Intervenție rapidă la solicitare pentru remedierea oricărei defecțiuni, cu timp de răspuns garantat prin contract.\n\nPreluăm în mentenanță și sisteme instalate de alți furnizori, după o evaluare inițială a stării echipamentelor existente.',
@@ -175,7 +253,7 @@ const handleSubmit = async (e) => {
                 key={i}
                 onClick={() => setActiveService(i)}
               >
-                <span className="service-icon">{s.icon}</span>
+                <span className="service-icon"><ServiceIcon type={s.icon} /></span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <span className="service-more">Vezi detalii →</span>
@@ -196,7 +274,13 @@ const handleSubmit = async (e) => {
             >
               ✕
             </button>
-            <span className="service-icon">{services[activeService].icon}</span>
+            <div className="service-modal-hero">
+              <img
+                src={`/services/${services[activeService].icon}.jpg`}
+                alt={services[activeService].title}
+              />
+            </div>
+            <span className="service-icon"><ServiceIcon type={services[activeService].icon} /></span>
             <h3>{services[activeService].title}</h3>
             {services[activeService].details.split('\n\n').map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
@@ -446,7 +530,7 @@ const handleSubmit = async (e) => {
             <span>🏅</span>
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
-          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.3 </div>
+          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.4 </div>
         </div>
       </footer>
     </>
