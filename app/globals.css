@@ -214,26 +214,42 @@ nav {
   margin-top: 0.25rem;
 }
 .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
-.shield-container { position: relative; width: 320px; height: 320px; }
+.shield-container { position: relative; width: 380px; height: 380px; }
+.shield-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, rgba(59, 130, 246, 0.15) 45%, rgba(59, 130, 246, 0) 72%);
+  filter: blur(6px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
 .shield-ring {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
-.shield-ring:nth-child(1) { inset: 0; border-color: rgba(59, 130, 246, 0.15); animation: rotate 30s linear infinite; }
-.shield-ring:nth-child(2) { inset: 30px; border-color: rgba(59, 130, 246, 0.25); animation: rotate 20s linear infinite reverse; }
-.shield-ring:nth-child(3) { inset: 60px; border-color: rgba(59, 130, 246, 0.35); animation: rotate 15s linear infinite; }
+.shield-ring:nth-child(2) { inset: 0; border-color: rgba(59, 130, 246, 0.15); animation: rotate 30s linear infinite; }
+.shield-ring:nth-child(3) { inset: 20px; border-color: rgba(59, 130, 246, 0.25); animation: rotate 20s linear infinite reverse; }
+.shield-ring:nth-child(4) { inset: 40px; border-color: rgba(59, 130, 246, 0.35); animation: rotate 15s linear infinite; }
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 0 0 40px rgba(37, 99, 235, 0.35), inset 0 0 40px rgba(10, 22, 40, 0.5); }
+  50% { box-shadow: 0 0 70px rgba(37, 99, 235, 0.6), inset 0 0 40px rgba(10, 22, 40, 0.5); }
+}
 .shield-center {
-  position: absolute; inset: 90px;
+  position: absolute; inset: 60px;
   background: linear-gradient(135deg, var(--blue-mid), var(--navy));
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   border: 2px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 40px rgba(37, 99, 235, 0.3), inset 0 0 40px rgba(10, 22, 40, 0.5);
+  animation: pulse-shadow 4s ease-in-out infinite;
 }
 .shield-icon { font-size: 3.5rem; }
 

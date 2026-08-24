@@ -146,11 +146,12 @@ const handleSubmit = async (e) => {
 
           <div className="hero-visual">
             <div className="shield-container">
+              <div className="shield-glow" />
               <div className="shield-ring" />
               <div className="shield-ring" />
               <div className="shield-ring" />
               <div className="shield-center">
-                <img src="/logo-white.png" alt="SIM Security" style={{ width: '65%', height: 'auto' }} />
+                <img src="/logo-white.png" alt="SIM Security" style={{ width: '70%', height: 'auto' }} />
               </div>
             </div>
           </div>
