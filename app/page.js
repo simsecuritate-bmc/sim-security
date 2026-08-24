@@ -1,84 +1,6 @@
 'use client'
 import { useState } from 'react'
 
-function ServiceIcon({ type }) {
-  const props = {
-    width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none',
-    stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round'
-  }
-  switch (type) {
-    case 'cctv':
-      return (
-        <svg {...props}>
-          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-          <circle cx="12" cy="13" r="4" />
-        </svg>
-      )
-    case 'alarm':
-      return (
-        <svg {...props}>
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-        </svg>
-      )
-    case 'perimeter':
-      return (
-        <svg {...props}>
-          <circle cx="12" cy="12" r="9" />
-          <circle cx="12" cy="12" r="3" />
-          <line x1="12" y1="2" x2="12" y2="5" />
-          <line x1="12" y1="19" x2="12" y2="22" />
-          <line x1="2" y1="12" x2="5" y2="12" />
-          <line x1="19" y1="12" x2="22" y2="12" />
-        </svg>
-      )
-    case 'access':
-      return (
-        <svg {...props}>
-          <rect x="3" y="11" width="18" height="10" rx="2" />
-          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-        </svg>
-      )
-    case 'fire':
-      return (
-        <svg {...props}>
-          <path d="M17.66 18.66A8 8 0 0 1 6.34 7.34S7 9 9 10c0-2 .5-5 3-7 2 2 4.16 5.19 4.16 8.16A7.97 7.97 0 0 1 17.66 18.66z" />
-          <path d="M9.88 16.12A3 3 0 1 0 12.01 11L11 14H9c0 .77.29 1.54.88 2.12z" />
-        </svg>
-      )
-    case 'intercom':
-      return (
-        <svg {...props}>
-          <path d="M23 7l-7 5 7 5V7z" />
-          <rect x="1" y="5" width="15" height="14" rx="2" />
-        </svg>
-      )
-    case 'automation':
-      return (
-        <svg {...props}>
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-      )
-    case 'network':
-      return (
-        <svg {...props}>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" y1="12" x2="22" y2="12" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-      )
-    case 'maintenance':
-      return (
-        <svg {...props}>
-          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z" />
-        </svg>
-      )
-    default:
-      return null
-  }
-}
-
 export default function Home() {
   const [formData, setFormData] = useState({ nume: '', telefon: '', email: '', serviciu: '', mesaj: '' })
   const [sent, setSent] = useState(false)
@@ -253,7 +175,13 @@ const handleSubmit = async (e) => {
                 key={i}
                 onClick={() => setActiveService(i)}
               >
-                <span className="service-icon"><ServiceIcon type={s.icon} /></span>
+                <span className="service-icon">
+                  <img
+                    src={`/services/${s.icon}.jpg`}
+                    alt={s.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <span className="service-more">Vezi detalii →</span>
@@ -280,7 +208,6 @@ const handleSubmit = async (e) => {
                 alt={services[activeService].title}
               />
             </div>
-            <span className="service-icon"><ServiceIcon type={services[activeService].icon} /></span>
             <h3>{services[activeService].title}</h3>
             {services[activeService].details.split('\n\n').map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
@@ -530,7 +457,7 @@ const handleSubmit = async (e) => {
             <span>🏅</span>
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
-          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.4 </div>
+          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.3 </div>
         </div>
       </footer>
     </>

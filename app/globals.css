@@ -312,6 +312,7 @@ section { padding: 6rem 2rem; }
   border: 1px solid rgba(59, 130, 246, 0.3);
   color: var(--accent-bright);
   margin-bottom: 1.25rem;
+  overflow: hidden;
 }
 .service-card h3 { font-size: 1.3rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--white); }
 .service-card p { color: var(--silver); font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
@@ -363,7 +364,6 @@ section { padding: 6rem 2rem; }
   height: auto;
   display: block;
 }
-.service-modal .service-icon { margin-bottom: 1rem; }
 .service-modal h3 { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: var(--accent-bright); margin-bottom: 1rem; }
 .service-modal p { color: var(--white); opacity: 0.9; font-size: 0.95rem; line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
 .service-modal-close {
@@ -507,4 +507,3 @@ footer {
 @media (min-width: 860px) {
   .services-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
