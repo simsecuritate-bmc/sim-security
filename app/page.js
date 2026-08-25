@@ -1,6 +1,31 @@
 'use client'
 import { useState } from 'react'
 
+function CertIcon({ type }) {
+  const props = {
+    width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none',
+    stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round'
+  }
+  switch (type) {
+    case 'igpr':
+      return (
+        <svg {...props}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      )
+    case 'igsu':
+      return (
+        <svg {...props}>
+          <path d="M17.66 18.66A8 8 0 0 1 6.34 7.34S7 9 9 10c0-2 .5-5 3-7 2 2 4.16 5.19 4.16 8.16A7.97 7.97 0 0 1 17.66 18.66z" />
+          <path d="M9.88 16.12A3 3 0 1 0 12.01 11L11 14H9c0 .77.29 1.54.88 2.12z" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
 export default function Home() {
   const [formData, setFormData] = useState({ nume: '', telefon: '', email: '', serviciu: '', mesaj: '' })
   const [sent, setSent] = useState(false)
@@ -239,10 +264,30 @@ const handleSubmit = async (e) => {
                   Firmă cu sediul în Com. Plenița, jud. Dolj, specializată în instalarea și mentenanța
                   sistemelor de securitate electronice.
                 </p>
-                <div className="cert-badges">
-                  <span className="cert-badge">ISO 9001:2015</span>
-                  <span className="cert-badge">Certificat MC</span>
-                  <span className="cert-badge">Autorizat IGPR</span>
+                <div className="cert-list">
+                  <div className="cert-item">
+                    <span className="cert-icon">
+                      <img src="/certifications/iso-mc-logo.png" alt="Management Certification" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 2 }} />
+                    </span>
+                    <div>
+                      <div className="cert-item-title">Certificat ISO 9001:2015</div>
+                      <div className="cert-item-desc">Sistem de Management al Calității — Certificat nr. C-MC 8356</div>
+                    </div>
+                  </div>
+                  <div className="cert-item">
+                    <span className="cert-icon"><CertIcon type="igpr" /></span>
+                    <div>
+                      <div className="cert-item-title">Licență de Funcționare IGPR</div>
+                      <div className="cert-item-desc">Instalare, modificare și întreținere a sistemelor de alarmare împotriva efracției — Nr. 5255/T</div>
+                    </div>
+                  </div>
+                  <div className="cert-item">
+                    <span className="cert-icon"><CertIcon type="igsu" /></span>
+                    <div>
+                      <div className="cert-item-title">Autorizație IGSU</div>
+                      <div className="cert-item-desc">Instalarea și întreținerea sistemelor de semnalizare, alarmare și alertare la incendiu — Seria B Nr. 5056</div>
+                    </div>
+                  </div>
                 </div>
 
                 <div style={{marginTop: '2rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem'}}>
@@ -459,7 +504,7 @@ const handleSubmit = async (e) => {
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
           <div className="footer-copy">
-            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.6 ·{' '}
+            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.8 ·{' '}
             <a href="/politica-confidentialitate" className="footer-legal-link">Politica de Confidențialitate</a>
           </div>
         </div>

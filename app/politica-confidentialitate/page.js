@@ -42,7 +42,7 @@ export default function PoliticaConfidentialitate() {
           <p>
             <strong>Operator de date:</strong> SIM SECURITY SRL<br />
             CUI: RO37913788<br />
-            Nr. de ordine în Registrul Comerțului: J2017001975163<br />
+            Nr. de ordine în Registrul Comerțului: J16/1975/2017<br />
             Sediu social: Aleea Înv. Constantin Papa, Nr. 1, Com. Plenița, Jud. Dolj<br />
             Email: <a href="mailto:sim.securitate@gmail.com">sim.securitate@gmail.com</a>
           </p>
