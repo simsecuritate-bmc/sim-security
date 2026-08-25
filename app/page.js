@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { ROMANIA_VIEWBOX, ROMANIA_COUNTIES, OLTENIA_LABELS } from './data/romania-counties'
 
 function CertIcon({ type }) {
   const props = {
@@ -423,13 +424,24 @@ const handleSubmit = async (e) => {
           </div>
 
           <div className="coverage-grid">
-            <div className="coverage-counties">
-              {['Dolj', 'Gorj', 'Mehedinți', 'Olt', 'Vâlcea'].map((judet, i) => (
-                <span className="county-chip" key={i}>
-                  {judet}
-                  {judet === 'Dolj' && <span className="county-chip-tag">Sediu</span>}
-                </span>
-              ))}
+            <div className="coverage-map-wrap">
+              <svg className="coverage-map" viewBox={ROMANIA_VIEWBOX} role="img" aria-label="Harta României, cu regiunea Oltenia evidențiată">
+                {ROMANIA_COUNTIES.map((c) => (
+                  <path
+                    key={c.id}
+                    d={c.path}
+                    className={c.oltenia ? 'county-path county-path-oltenia' : 'county-path'}
+                  >
+                    <title>{c.name}</title>
+                  </path>
+                ))}
+                {OLTENIA_LABELS.map((l) => (
+                  <text key={l.id} className="county-map-label" x={l.x} y={l.y}>{l.name}</text>
+                ))}
+                <circle className="hq-dot" cx="216" cy="383" r="3.2" />
+                <text className="county-hq-tag" x="216" y="395">SEDIU</text>
+              </svg>
+              <p className="coverage-map-caption">Regiunea Oltenia — zona noastră de acoperire constantă</p>
             </div>
 
             <div className="coverage-note">
@@ -442,9 +454,9 @@ const handleSubmit = async (e) => {
               <div>
                 <div className="coverage-note-title">Disponibili la nivel național</div>
                 <p>
-                  În funcție de complexitatea proiectului, ne deplasăm și în afara Olteniei. Avem deja
-                  lucrări executate în zona <strong>Tulcea</strong> și <strong>Brăila</strong> —
-                  contactează-ne pentru a discuta despre o eventuală colaborare, indiferent de locație.
+                  În funcție de complexitatea proiectului, ne deplasăm și în afara Olteniei, indiferent
+                  de distanță — avem deja la activ lucrări executate departe de sediu. Contactează-ne
+                  pentru a discuta despre o eventuală colaborare, indiferent de locație.
                 </p>
               </div>
             </div>
@@ -586,7 +598,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           <div className="footer-copy">
-            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.12 ·{' '}
+            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.14 ·{' '}
             <a href="/politica-confidentialitate" className="footer-legal-link">Politica de Confidențialitate</a>
           </div>
         </div>
