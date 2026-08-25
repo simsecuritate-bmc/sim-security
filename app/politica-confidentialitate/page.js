@@ -149,11 +149,21 @@ export default function PoliticaConfidentialitate() {
             <img src="/logo-white.png" alt="SIM Security" style={{ height: 32, width: 'auto' }} />
             SIM <span>Security</span> SRL
           </div>
-          <div className="iso-badge">
-            <span>🏅</span>
-            <span>Certificat <strong>ISO 9001:2015</strong></span>
+          <div className="footer-badges">
+            <div className="iso-badge">
+              <span>🏅</span>
+              <span>Certificat <strong>ISO 9001:2015</strong></span>
+            </div>
+            <div className="iso-badge">
+              <span>🛡️</span>
+              <span>Licență <strong>IGPR</strong></span>
+            </div>
+            <div className="iso-badge">
+              <span>🔥</span>
+              <span>Autorizație <strong>IGSU</strong></span>
+            </div>
           </div>
-          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.6 </div>
+          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.9 </div>
         </div>
       </footer>
     </>

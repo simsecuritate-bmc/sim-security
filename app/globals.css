@@ -557,6 +557,7 @@ footer {
 .footer-copy { font-size: 0.8rem; color: var(--silver); }
 .iso-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--silver); }
 .iso-badge strong { color: var(--accent-bright); }
+.footer-badges { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 
 /* LEGAL PAGES (Politica de Confidențialitate etc.) */
 .legal-hero {
