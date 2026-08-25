@@ -265,23 +265,29 @@ const handleSubmit = async (e) => {
                   sistemelor de securitate electronice.
                 </p>
                 <div className="cert-list">
-                  <div className="cert-item">
+                  <div className="cert-item cert-item-iso">
                     <span className="cert-icon">
-                      <img src="/certifications/iso-mc-logo.png" alt="Management Certification" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 2 }} />
+                      <img
+                        src="/certifications/iso-mc-logo.png"
+                        alt="Management Certification"
+                        width={38}
+                        height={38}
+                        style={{ width: 38, height: 38, objectFit: 'contain' }}
+                      />
                     </span>
                     <div>
                       <div className="cert-item-title">Certificat ISO 9001:2015</div>
                       <div className="cert-item-desc">Sistem de Management al Calității — Certificat nr. C-MC 8356</div>
                     </div>
                   </div>
-                  <div className="cert-item">
+                  <div className="cert-item cert-item-igpr">
                     <span className="cert-icon"><CertIcon type="igpr" /></span>
                     <div>
                       <div className="cert-item-title">Licență de Funcționare IGPR</div>
                       <div className="cert-item-desc">Instalare, modificare și întreținere a sistemelor de alarmare împotriva efracției — Nr. 5255/T</div>
                     </div>
                   </div>
-                  <div className="cert-item">
+                  <div className="cert-item cert-item-igsu">
                     <span className="cert-icon"><CertIcon type="igsu" /></span>
                     <div>
                       <div className="cert-item-title">Autorizație IGSU</div>
@@ -504,7 +510,7 @@ const handleSubmit = async (e) => {
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
           <div className="footer-copy">
-            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.8 ·{' '}
+            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.9 ·{' '}
             <a href="/politica-confidentialitate" className="footer-legal-link">Politica de Confidențialitate</a>
           </div>
         </div>
