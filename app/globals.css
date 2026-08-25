@@ -644,8 +644,75 @@ footer {
   100% { transform: scale(1.7); opacity: 0; }
 }
 
+/* ZONĂ DE ACOPERIRE */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+  align-items: start;
+}
+.coverage-counties {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.75rem;
+}
+.county-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.county-chip-tag {
+  background: var(--accent-bright);
+  color: var(--navy);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+.coverage-note {
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(26, 58, 107, 0.3), rgba(10, 22, 40, 0.8));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+.coverage-note-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(96, 165, 250, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: var(--accent-bright);
+}
+.coverage-note-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+.coverage-note p { color: var(--silver); font-size: 0.9rem; line-height: 1.7; font-weight: 300; }
+.coverage-note p strong { color: var(--accent-bright); font-weight: 600; }
+
 @media (max-width: 768px) {
-  .hero-content, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-content, .about-grid, .contact-grid, .coverage-grid { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
   .nav-links { display: none; }
   .floating-actions { right: 1rem; bottom: 1rem; gap: 0.65rem; }

@@ -126,6 +126,7 @@ const handleSubmit = async (e) => {
           <li><a href="#acasa">Acasă</a></li>
           <li><a href="#servicii">Servicii</a></li>
           <li><a href="#despre">Despre Noi</a></li>
+          <li><a href="#acoperire">Acoperire</a></li>
           <li><a href="#contact" className="nav-cta">Contact</a></li>
         </ul>
       </nav>
@@ -163,10 +164,6 @@ const handleSubmit = async (e) => {
         <div className="hero-grid" />
         <div className="hero-content">
           <div>
-            <div className="hero-badge">
-              <span className="hero-badge-dot" />
-              Certificat ISO 9001:2015
-            </div>
             <h1 className="hero-title">
               Securitate<br />
               <span className="accent">Profesională</span><br />
@@ -413,6 +410,48 @@ const handleSubmit = async (e) => {
         </div>
       </section>
 
+      {/* ZONĂ DE ACOPERIRE */}
+      <section id="acoperire">
+        <div className="container">
+          <div className="services-header">
+            <p className="section-label">Unde Intervenim</p>
+            <h2 className="section-title">Zonă de Acoperire</h2>
+            <p className="section-subtitle">
+              Acoperim constant regiunea Oltenia, cu intervenție rapidă și mentenanță programată.
+              Pentru proiecte mai ample, ne deplasăm oriunde în țară.
+            </p>
+          </div>
+
+          <div className="coverage-grid">
+            <div className="coverage-counties">
+              {['Dolj', 'Gorj', 'Mehedinți', 'Olt', 'Vâlcea'].map((judet, i) => (
+                <span className="county-chip" key={i}>
+                  {judet}
+                  {judet === 'Dolj' && <span className="county-chip-tag">Sediu</span>}
+                </span>
+              ))}
+            </div>
+
+            <div className="coverage-note">
+              <span className="coverage-note-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div>
+                <div className="coverage-note-title">Disponibili la nivel național</div>
+                <p>
+                  În funcție de complexitatea proiectului, ne deplasăm și în afara Olteniei. Avem deja
+                  lucrări executate în zona <strong>Tulcea</strong> și <strong>Brăila</strong> —
+                  contactează-ne pentru a discuta despre o eventuală colaborare, indiferent de locație.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact">
         <div className="container">
@@ -547,7 +586,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           <div className="footer-copy">
-            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.11 ·{' '}
+            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.12 ·{' '}
             <a href="/politica-confidentialitate" className="footer-legal-link">Politica de Confidențialitate</a>
           </div>
         </div>
