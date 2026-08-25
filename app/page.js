@@ -121,7 +121,7 @@ const handleSubmit = async (e) => {
               pentru afacerea ta
             </h1>
             <p className="hero-subtitle">
-              Instalare și mentenanță sisteme de securitate în zona Olteniei și nu numai.
+              Instalare și mentenanță sisteme de securitate în județul Dolj și nu numai.
               Camere CCTV, alarme, control acces — soluții complete adaptate nevoilor tale.
             </p>
             <div className="hero-actions">
@@ -458,7 +458,10 @@ const handleSubmit = async (e) => {
             <span>🏅</span>
             <span>Certificat <strong>ISO 9001:2015</strong></span>
           </div>
-          <div className="footer-copy">© {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.5 </div>
+          <div className="footer-copy">
+            © {new Date().getFullYear()} SIM Security SRL. Toate drepturile rezervate. V1.0.6 ·{' '}
+            <a href="/politica-confidentialitate" className="footer-legal-link">Politica de Confidențialitate</a>
+          </div>
         </div>
       </footer>
     </>

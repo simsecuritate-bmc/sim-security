@@ -514,6 +514,53 @@ footer {
 .iso-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--silver); }
 .iso-badge strong { color: var(--accent-bright); }
 
+/* LEGAL PAGES (Politica de Confidențialitate etc.) */
+.legal-hero {
+  padding: 9rem 2rem 3rem;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+.legal-hero .container { max-width: 860px; }
+.legal-updated { font-size: 0.85rem; color: var(--silver); margin-top: 0.75rem; }
+.legal-content { padding: 4rem 2rem; }
+.legal-content .container { max-width: 860px; }
+.legal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p {
+  color: var(--silver-light);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.legal-content ul {
+  margin: 0 0 1rem 1.25rem;
+  color: var(--silver-light);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.legal-content li { margin-bottom: 0.4rem; }
+.legal-content a { color: var(--accent-bright); }
+.legal-content strong { color: var(--white); font-weight: 600; }
+.legal-back-link {
+  display: inline-block;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-bright);
+  text-decoration: none;
+}
+.footer-legal-link { color: inherit; text-decoration: underline; }
+
 @media (max-width: 768px) {
   .hero-content, .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
